@@ -43,4 +43,4 @@ print(f'Product: {product}')
 # It needs to import reduce
 product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
 
-print(f'Product: {product}')
+print(f'Product: {product}') 
