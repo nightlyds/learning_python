@@ -4,20 +4,25 @@ from functools import reduce
 print("MAP:")
 array = [0, 1, 2, 3]
 
+
 def function(x):
     return x + 1
+
 
 result = list(map(function, array))
 
 print(result)
 
-def mutiply(x):
-    return x * 2
+
+def multiply(x):
+    return x * x
+
 
 def add(x):
     return x + x
 
-funcs = [mutiply, add]
+
+funcs = [multiply, add]
 
 for i in range(10):
     value = list(map(lambda x: x(i), funcs))
