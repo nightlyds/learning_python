@@ -91,7 +91,7 @@ Point = namedtuple('Point', ['x', 'y'])
 
 p = Point(11, 22)
 
-print(p) # Output: Pointt(x=11, y=22)
+print(p) # Output: Point(x=11, y=22)
 print(p[0] + p[1]) # Output: 33
 print(p.x, p.y) # Output: 11 22
 
