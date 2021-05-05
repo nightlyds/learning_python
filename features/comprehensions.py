@@ -51,3 +51,7 @@ for i, v in enumerate(['tic', 'tac', 'toe']):
 string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
 non_null = string1 or string2 or string3
 print(non_null) # Output: Trondheim
+
+# lists ternary operation
+print([1, 2][True]) # Output: 2 | [False, True]
+print([1, 2][False]) # Output: 1
