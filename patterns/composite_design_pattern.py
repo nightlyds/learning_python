@@ -4,7 +4,7 @@ class IDepartment(ABC):
 
     @abstractmethod
     def print_department(self):
-        """ Implement in child class """
+        pass
 
 class Accounting(IDepartment):
 
@@ -35,7 +35,7 @@ class ParentDepartment(IDepartment):
 
     def print_department(self):
         print("Parent Department")
-        print(f"Accounting Department: {self.base_employees}")
+        print(f"Parent Department: {self.base_employees}")
         for dept in self.sub_depts:
             dept.print_department()
         print(f"Total number of employees: {self.employees}")

@@ -2,34 +2,44 @@ from abc import ABC, abstractmethod
 
 class AbstractPerson(ABC):
 
-    def __init__(self):
-        self.movement = self.choose_side()
-
     @abstractmethod
     # Factory method
     def choose_side(self):
-        """ Side """
+        pass
 
+    @abstractmethod
     def action(self):
-        print(self.movement.move())
+        pass
 
 
 class Person1(AbstractPerson):
 
+    def __init__(self):
+        self.movement = self.choose_side()
+
     def choose_side(self):
         return PersonMoveLeft()
 
+    def action(self):
+        print(self.movement.move())
+
 class Person2(AbstractPerson):
+
+    def __init__(self):
+        self.movement = self.choose_side()
 
     def choose_side(self):
         return PersonMoveRight()
+
+    def action(self):
+        print(self.movement.move())
 
 class AbstractPersonMove(ABC):
 
     @staticmethod
     @abstractmethod
     def move():
-        """ Move """
+        pass
 
 class PersonMoveLeft(AbstractPersonMove):
 

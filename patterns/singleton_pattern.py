@@ -2,19 +2,24 @@ from abc import ABC, abstractmethod
 
 class IPerson(ABC):
 
-    @staticmethod
+    @classmethod
     @abstractmethod
-    def print_data():
-        """ Implement in child class """
+    def get_instance(cls):
+        pass
+
+    @classmethod
+    @abstractmethod
+    def print_data(cls):
+        pass
 
 class PersonSingleton(IPerson):
 
     __instance = None
 
-    @staticmethod
-    def get_instance():
+    @classmethod
+    def get_instance(cls):
 
-        if PersonSingleton.__instance == None:
+        if cls.__instance == None:
             PersonSingleton("Default", 0)
         return PersonSingleton.__instance
 
@@ -26,9 +31,9 @@ class PersonSingleton(IPerson):
             self.age = age
             PersonSingleton.__instance = self
 
-    @staticmethod
-    def print_data():
-        print(f"Name: {PersonSingleton.__instance.name}, Age: {PersonSingleton.__instance.age}")
+    @classmethod
+    def print_data(cls):
+        print(f"Name: {cls.__instance.name}, Age: {cls.__instance.age}")
 
 p = PersonSingleton("Mike", 30)
 print(p)

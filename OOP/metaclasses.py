@@ -20,7 +20,7 @@ class UpperAttrMetaclass(type):
         attrs = ((name, value) for name, value in dct.items() if not name.startswith('__'))
         uppercase_attr = dict((name.upper(), value) for name, value in attrs)
 
-        return super(UpperAttrMetaclass, cls).__new__(cls, name, bases, uppercase_attr)
+        return super().__new__(cls, name, bases, uppercase_attr)
 
 class Foo(metaclass=UpperAttrMetaclass): # metaclass=upper_attr - for using function as metaclass
 

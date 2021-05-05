@@ -34,6 +34,5 @@ observer.add_subscriber(person3)
 
 observer.delete_subscriber(person3)
 
-
-observer.__str__()
+print(observer.__str__())
 observer.show_subscribers()

@@ -35,7 +35,7 @@ class PersonFactory:
         print("Invalid type")
         return -1
 
-if __name__ == "__main__":
-    choice = input("What type of person do you want to create: \n")
-    person = PersonFactory.build_person(choice)
-    person.person_method()
+
+choice = input("What type of person do you want to create: \n")
+person = PersonFactory.build_person(choice)
+person.person_method()

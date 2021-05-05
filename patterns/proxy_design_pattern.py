@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+# Cat
 class AbstractCat(ABC):
 
     @abstractmethod
@@ -27,62 +28,60 @@ proxy_cat = ProxyCat(cat)
 
 print(proxy_cat._return_name())
 
-# from abc import ABC, abstractmethod
-#
-# class IPerson(ABC):
-#
-#     @abstractmethod
-#     def show_name(self):
-#         """ Show name """
-#
-# class Person(IPerson):
-#
-#     def show_name(self):
-#         return "and that`s person`s method"
-#
-# class ProxyPerson(IPerson):
-#
-#     def __init__(self):
-#         self.person = Person()
-#
-#     def show_name(self):
-#         print(f'Proxy functionality {self.person.show_name()}')
-#
-# p1 = Person()
-# print(p1.show_name())
-#
-# p2 = ProxyPerson()
-# p2.show_name()
+# Person
+class IPerson(ABC):
 
-# from abc import ABC, abstractmethod
-#
-# class AbstractZoo(ABC):
-#
-#     @abstractmethod
-#     def add_animal(self, animal):
-#         """ Add Animal """
-#
-# class Zoo(AbstractZoo):
-#
-#     def __init__(self):
-#         self.animals = []
-#
-#     def add_animal(self, animal):
-#         self.animals.append(animal)
-#
-# class ProxyZoo(AbstractZoo):
-#
-#     def __init__(self, zoo):
-#         self.zoo = zoo
-#
-#     def add_animal(self, animal):
-#
-#         print(f"Adding new animal: {animal} to: {self.zoo.__class__.__name__}")
-#         self.zoo.add_animal(animal)
-#
-# zoo = Zoo()
-# proxy_zoo = ProxyZoo(zoo)
-#
-# proxy_zoo.add_animal('hawk')
-# proxy_zoo.add_animal('bear')
-# proxy_zoo.add_animal('lark')
+    @abstractmethod
+    def show_name(self):
+        """ Show name """
+
+class Person(IPerson):
+
+    def show_name(self):
+        return "and that`s person`s method"
+
+class ProxyPerson(IPerson):
+
+    def __init__(self):
+        self.person = Person()
+
+    def show_name(self):
+        print(f'Proxy functionality {self.person.show_name()}')
+
+p1 = Person()
+print(p1.show_name())
+
+p2 = ProxyPerson()
+p2.show_name()
+
+# Zoo
+class AbstractZoo(ABC):
+
+    @abstractmethod
+    def add_animal(self, animal):
+        """ Add Animal """
+
+class Zoo(AbstractZoo):
+
+    def __init__(self):
+        self.animals = []
+
+    def add_animal(self, animal):
+        self.animals.append(animal)
+
+class ProxyZoo(AbstractZoo):
+
+    def __init__(self, zoo):
+        self.zoo = zoo
+
+    def add_animal(self, animal):
+
+        print(f"Adding new animal: {animal} to: {self.zoo.__class__.__name__}")
+        self.zoo.add_animal(animal)
+
+zoo = Zoo()
+proxy_zoo = ProxyZoo(zoo)
+
+proxy_zoo.add_animal('hawk')
+proxy_zoo.add_animal('bear')
+proxy_zoo.add_animal('lark')

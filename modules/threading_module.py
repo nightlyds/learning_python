@@ -129,11 +129,11 @@ def excepthook_impl(message):
 
 threading.excepthook = excepthook_impl
 
-def error_soon(timeout):
+def error(timeout):
     time.sleep(timeout)
     raise Exception("Time is up!")
 
-my_thread = threading.Thread(target=error_soon, args=(3,))
+my_thread = threading.Thread(target=error, args=(3,))
 my_thread.start()
 time.sleep(7)
 

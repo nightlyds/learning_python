@@ -36,10 +36,10 @@ a = {x for x in 'abracadabra' if x not in 'abc'}
 print(a) # Output: {'r', 'd'}
 
 implementation_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
-b = {k:v*2 for (k,v) in implementation_dictionary.items()}
+b = {k: v * 2 for (k, v) in implementation_dictionary.items()}
 print(b) # Output:{'e': 10, 'a': 2, 'c': 6, 'b': 4, 'd': 8}
 
-# Enumarate list
+# Enumerate list
 for i, v in enumerate(['tic', 'tac', 'toe']):
     print(i, v)
 

@@ -2,14 +2,6 @@ from abc import ABC, abstractmethod
 
 class AbstractPerson(ABC):
 
-    persons = 0
-
-    @abstractmethod
-    def __init__(self, name, lastname, age):
-        self.name = name
-        self.lastname = lastname
-        self.age = age
-
     @staticmethod
     @abstractmethod
     def age_value(age):
@@ -17,7 +9,7 @@ class AbstractPerson(ABC):
 
     @abstractmethod
     def return_name(self):
-        return self.name
+        pass
 
     @classmethod
     @abstractmethod
@@ -27,15 +19,19 @@ class AbstractPerson(ABC):
 
 class Person(AbstractPerson):
 
-    def __init__(self, *args):
-        super().__init__(*args)
+    persons = 0
+
+    def __init__(self, name, lastname, age):
+        self.name = name
+        self.lastname = lastname
+        self.age = age
 
     @staticmethod
     def age_value(age):
         return age > 18
 
     def return_name(self):
-        return super().return_name()
+        return self.name
 
     @classmethod
     def add_persons(cls):

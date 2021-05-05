@@ -40,7 +40,7 @@ product = 1
 array = [1, 2, 3, 4]
 
 for num in array:
-    product = product * num
+    product *= num
 
 print(f'Product: {product}')
 

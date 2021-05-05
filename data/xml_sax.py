@@ -1,6 +1,6 @@
 import xml.sax
 
-class BREAKFAST_HANDLER(xml.sax.ContentHandler):
+class BREAKFAST_HANDLER:
 
     def startElement(self, name, attrs):
         self.current = name

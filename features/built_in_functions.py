@@ -4,8 +4,10 @@ print(all([1, 2, 3])) # Output: True | because all elements inside are True.
 
 print(any([False, None, [], 1])) # Output: True | Return True if any element of the iterable is true.
 
-print(bin(10)) # Output: 0b1010 | conver int to binary string.
+print(bin(10)) # Output: 0b1010 | convert int to binary string.
 print(format(10, '#b'), format(10, 'b')) # Output: ('0b1110', '1110')
+print(bin(3)) # Output: 0b11
+print(format(3, '11')) # 3
 
 print(bool(1)) # Output: true | return bool value
 
@@ -38,7 +40,7 @@ print(dir(s))
 # divmod
 print(divmod(10, 3)) # Output: (3, 1) | return pair of numbers consisting of their quotient and remainder
 
-# enumarete
+# enumerate
 for i, l in enumerate(['a', 'b', 'c', 'd']):
     print(i, l)
 
@@ -90,6 +92,16 @@ print(len([1])) # Output: 1 | return lenght of the object
 # range(a, b, c) -> start, end, step
 print(list(range(10))) # Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+implementation_list = [1, 2, 3]
+
+# range only once initialize the value
+# for example, the next example is not infinity loop
+# because, after first iteration
+# the look will be: for i in [1, 2, 3]
+for i in range(len(implementation_list)):
+    print(i)
+    implementation_list.append(i)
+
 # reversed
 print(list(reversed([1, 2, 3]))) # Output: [3, 2, 1]
 
@@ -105,6 +117,7 @@ print(sorted([1, 3, 2, 5, 4])) # Output: [1, 2, 3, 4, 5]
 print(sorted([1, 3, 2, 5, 4], key=None, reverse=True)) # Output: [5, 4, 3, 2, 1]
 
 # sum
+# fsum from math module is more correctly
 print(sum([2.5, 3, 4, -5])) # Output: 4,5
 
 # tuple
@@ -122,10 +135,6 @@ print(next(vowels_iter)) # Output: e
 print(next(vowels_iter)) # Output: i
 print(next(vowels_iter)) # Output: o
 print(next(vowels_iter)) # Output: u
-
-# format
-print(bin(3)) # Output: 0b11
-print(format(3, '11')) # 3
 
 # getattr
 class Person:
@@ -163,6 +172,21 @@ help(hash) # return info about function
 
 # id
 print(id({})) # return id of the object
+a = [1, 2, 3]
+b = 1
+
+# id for objects
+print(a, id(a))
+print(b, id(b))
+
+a.append(4)
+b = 2
+
+print(a, id(a)) # the same id
+# changed id, because immutable types
+# use reassign and that`s the cause
+# of rewriting the id
+print(b, id(b))
 
 # input
 input_text = input("type text: ")

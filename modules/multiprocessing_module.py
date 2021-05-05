@@ -13,9 +13,6 @@ logger.setLevel(logging.INFO)
 print("Process")
 
 def doubler(number):
-    """
-    Функция умножитель на два
-    """
     result = number * 2
     proc = os.getpid()
     print('{0} doubled to {1} by process id: {2}'.format(

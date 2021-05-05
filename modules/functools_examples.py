@@ -15,8 +15,6 @@ print(recursion(12)) # 2 new recursion calls
 print('partial examples')
 
 def multiply(a, b):
-    """ Multiply function """
-
     return a * b
 
 reordering_multiply = partial(multiply, 2) # set 2 for a argument, also we can use b=2 for setting 2 for b argument
@@ -106,6 +104,9 @@ mike = Student('Mike', 'LastName')
 print(jake._is_valid_operand(mike)) # True | has firstname and lastname, means is valid
 print(mike.__eq__(jake)) # False | firstname is not the same
 print(jake.__lt__(mike)) # True | comparison firstname and lastname, as such: 'J' < 'M' -> True
+
+print(mike == jake) # False
+print(jake < mike) # True
 
 # The correspondence between operator symbols and method names is as follows:
 # x<y calls x.__lt__(y), x<=y calls x.__le__(y), x==y calls x.__eq__(y),
