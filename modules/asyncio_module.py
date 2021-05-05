@@ -8,6 +8,7 @@ async def main():
     await asyncio.sleep(1)
     print("B")
 
+
 async def other_function():
     print(1)
     await asyncio.sleep(2)
@@ -16,26 +17,29 @@ async def other_function():
 
 asyncio.run(main())
 
+
 # Example
-async def getData(url):
+async def get_data(url):
     await asyncio.sleep(3)
     return {"id": 0, "name": "name", "email": "email@email.com"}
 
-async def postData(data, message):
+
+async def post_data(data, message):
     await asyncio.sleep(1)
     posted_data = (data, message)
     return (True, posted_data)
 
-async def toMakePost(message):
+
+async def to_make_post(message):
     print("Start making the post..")
-    get_data_task = asyncio.Task(getData("url"))
-    print("Data are getting..")
-    get_data = await get_data_task
-    print(f"Data already got.. {get_data}")
-    post_data_task = asyncio.Task(postData(get_data, message))
-    print("Data are posting..")
-    post_data = await post_data_task
-    print(f"Data already posted {post_data}")
+    get_data_task = asyncio.Task(get_data("url"))
+    print("Data is getting..")
+    _get_data = await get_data_task
+    print(f"Data already got.. {_get_data}")
+    post_data_task = asyncio.Task(post_data(get_data, message))
+    print("Data is posting..")
+    _post_data = await post_data_task
+    print(f"Data already posted {_post_data}")
     print('Finished..')
 
-asyncio.run(toMakePost('message'))
+asyncio.run(to_make_post('message'))
