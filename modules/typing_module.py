@@ -44,16 +44,16 @@ def add(x: T, y: T) -> T:
 print(add(1, 2))
 print(add(1., 2.))
 
-L = TypeVar("L")
-
 # Generic
 # The type depends from the input data
-class Foo(Generic[L]):
-    def __init__(self, foo: L) -> None:
-        self.foo = foo
+L = TypeVar("L")
+
+class A(Generic[L]):
+    def __init__(self, a: L) -> None:
+        self.a = a
 
     def get(self) -> L:
-        return self.foo
+        return self.a
 
-f: Foo[str] = Foo("Foo")
-v: str = f.get()
+a: A[str] = A("A")
+v: str = a.get()
