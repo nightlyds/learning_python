@@ -13,7 +13,6 @@ def file_open(path):
     finally:
         f_obj.close()
 
-
 with file_open('contextlib_text.txt') as fobj:
     fobj.write('')
 
@@ -49,14 +48,14 @@ for ip in sample_input:
     stdout_fileno.write(ip + '\n')
 
 
-path = 'contextlib_text.txt'
-
-with open(path, 'w') as fobj:
-    sys.stdout = fobj
-
-with open(path, 'w') as fobj:
-    with redirect_stdout(fobj):
-        print('sdads') # Prints messages from the terminal into the file
+# path = 'contextlib_text.txt'
+#
+# with open(path, 'w') as fobj:
+#     sys.stdout = fobj
+#
+# with open(path, 'w') as fobj:
+#     with redirect_stdout(fobj):
+#         print('sdads') # Prints messages from the terminal into the file
 
 # ExitStack
 def mock_available_location_types():
@@ -69,14 +68,17 @@ def mock_available_location_types():
     ]
     patchers = [
         mock.patch(
-            'environment_tools.type_utils.available_location_types',
+            '_logging.logger',
             return_value=mock_types,
         ),
         mock.patch(
-            'synapse_tools.configure_synapse.available_location_types',
+            'asyncio_module.main',
             return_value=mock_types,
         ),
     ]
 
     with ExitStack() as stack:
         yield tuple(stack.enter_context(patch) for patch in patchers)
+
+# (<MagicMock name='logger' id='140487398502112'>, <AsyncMock name='main' id='140487398230816'>)
+print(next(mock_available_location_types()))
