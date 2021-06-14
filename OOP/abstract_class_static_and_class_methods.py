@@ -45,3 +45,12 @@ print(Person.add_persons()) # Out: 1
 print(Person.add_persons()) # Out: 2
 print(Person.add_persons()) # Out: 3
 print(Person.add_persons()) # Out: 4
+
+# classmethod
+class SomeClass:
+
+    @classmethod
+    def hello(cls):
+        print('Hello, class {}'.format(cls.__name__))
+
+SomeClass.hello() # Hello, class SomeClass

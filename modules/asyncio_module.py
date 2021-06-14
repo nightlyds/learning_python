@@ -1,5 +1,6 @@
 import asyncio
 
+
 async def main():
     task = asyncio.Task(other_function())
     returned_value = await task
@@ -27,7 +28,7 @@ async def get_data(url):
 async def post_data(data, message):
     await asyncio.sleep(1)
     posted_data = (data, message)
-    return (True, posted_data)
+    return True, posted_data
 
 
 async def to_make_post(message):

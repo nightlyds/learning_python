@@ -86,7 +86,7 @@ implementation_frozenset = frozenset('abdasdsdasdas') # the same like set(), but
 print(implementation_frozenset) # Output: frozenset({'s', 'a', 'd', 'b'}
 
 # len
-print(len([1])) # Output: 1 | return lenght of the object
+print(len([1])) # Output: 1 | return length of the object
 
 # range
 # range(a, b, c) -> start, end, step

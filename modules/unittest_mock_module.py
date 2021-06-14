@@ -6,7 +6,7 @@ class TestCalculator(unittest.TestCase):
     @patch('functions_mock_module.sum', return_value=9)
     def test_sum(self, sum):
         print(sum(2, 3)) # Output: 9 | mocked to 9
-        self.assertEqual(sum(5,4), 9)
+        self.assertEqual(sum(5, 4), 9)
 
 def mock_sum(a, b):
     # mock sum function without the long running time.sleep

@@ -53,12 +53,3 @@ class Car:
 
 carA = Car(2088)
 print(carA.get_car_model())
-
-# classmethod
-class SomeClass:
-
-    @classmethod
-    def hello(cls):
-        print('Hello, класс {}'.format(cls.__name__))
-
-SomeClass.hello() # Hello, class SomeClass

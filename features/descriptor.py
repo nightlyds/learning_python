@@ -1,5 +1,5 @@
 class RevealAccess:
-    """The data descriptor, which set and return a value
+    """ The data descriptor, which set and return a value
     and print a message about accessing to the attribute.
     """
 
@@ -22,11 +22,11 @@ class MyClass(object):
 
 
 m = MyClass()
-print(m.x)  # Get var 'x' | 10
+print(m.x)  # Get var 'x'\n10
 m.x = 20
 # Upgrade var 'x'
 print(m.x)
-# Get var 'x' | 20
+# Get var 'x'\n20
 print(m.y)  # 5
 
 
